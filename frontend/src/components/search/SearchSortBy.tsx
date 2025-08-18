@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParamUpdater } from "src/hooks/useSearchParamUpdater";
-import { SortOption } from "src/types/search/searchSortTypes";
+import { SORT_OPTIONS } from "src/types/search/searchSortTypes";
 
 import { useTranslations } from "next-intl";
 import { useCallback } from "react";
@@ -14,36 +14,7 @@ interface SearchSortByProps {
 
 export default function SearchSortBy({ queryTerm, sortby }: SearchSortByProps) {
   const { updateQueryParams } = useSearchParamUpdater();
-  const t = useTranslations("Search");
-
-  const SORT_OPTIONS: SortOption[] = [
-    {
-      label: t("sortBy.options.default"),
-      value: "relevancy",
-    },
-    { label: t("sortBy.options.closeDateDesc"), value: "closeDateDesc" },
-    { label: t("sortBy.options.closeDateAsc"), value: "closeDateAsc" },
-    { label: t("sortBy.options.postedDateDesc"), value: "postedDateDesc" },
-    { label: t("sortBy.options.postedDateAsc"), value: "postedDateAsc" },
-    {
-      label: t("sortBy.options.opportunityTitleAsc"),
-      value: "opportunityTitleAsc",
-    },
-    {
-      label: t("sortBy.options.opportunityTitleDesc"),
-      value: "opportunityTitleDesc",
-    },
-    { label: t("sortBy.options.awardFloorAsc"), value: "awardFloorAsc" },
-    { label: t("sortBy.options.awardFloorDesc"), value: "awardFloorDesc" },
-    {
-      label: t("sortBy.options.awardCeilingAsc"),
-      value: "awardCeilingAsc",
-    },
-    {
-      label: t("sortBy.options.awardCeilingDesc"),
-      value: "awardCeilingDesc",
-    },
-  ];
+  const t = useTranslations("Search.sortBy");
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -59,7 +30,7 @@ export default function SearchSortBy({ queryTerm, sortby }: SearchSortByProps) {
         htmlFor="search-sort-by-select"
         className="usa-label tablet:display-inline-block tablet:margin-right-2"
       >
-        {t("sortBy.label")}
+        {t("label")}
       </label>
 
       <Select
@@ -69,9 +40,9 @@ export default function SearchSortBy({ queryTerm, sortby }: SearchSortByProps) {
         value={sortby || ""}
         className="tablet:display-inline-block tablet:width-auto"
       >
-        {SORT_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+        {SORT_OPTIONS.map(optionKey => (
+          <option key={optionKey} value={optionKey}>
+            {t(`options.${optionKey}`)}
           </option>
         ))}
       </Select>

@@ -3,6 +3,7 @@ import {
   ValidSearchQueryParam,
   ValidSearchQueryParamData,
 } from "src/types/search/searchQueryTypes";
+import { allFilterOptions } from "src/constants/searchFilterOptions";
 import { queryParamsToQueryString } from "src/utils/generalUtils";
 
 import Link from "next/link";
@@ -10,6 +11,8 @@ import Link from "next/link";
 import { USWDSIcon } from "src/components/USWDSIcon";
 import { DeleteSavedSearchModal } from "src/components/workspace/DeleteSavedSearchModal";
 import { EditSavedSearchModal } from "src/components/workspace/EditSavedSearchModal";
+import { FrontendFilterNames, searchFilterNames } from "src/types/search/searchFilterTypes";
+import { useTranslations } from "next-intl";
 
 export const SavedSearchesList = ({
   savedSearches,
@@ -26,6 +29,7 @@ export const SavedSearchesList = ({
   editText: string;
   deleteText: string;
 }) => {
+  const t = useTranslations("Search");
   return (
     <ul className="usa-list--unstyled grid-container">
       {savedSearches.map((savedSearch) => (
@@ -71,8 +75,12 @@ export const SavedSearchesList = ({
             >
               {Object.entries(omit(paramDisplayMapping, "page")).map(
                 ([key, paramDisplay]) => {
-                  const value =
+                  const rawValue =
                     savedSearch.searchParams[key as ValidSearchQueryParam];
+                  const formattedValue = 
+                    searchFilterNames.includes(key as FrontendFilterNames)
+                    ? allFilterOptions[key as FrontendFilterNames]
+                    : null;
                   return value ? (
                     <div key={key}>
                       <span className="text-bold">{paramDisplay}: </span>

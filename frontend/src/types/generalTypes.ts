@@ -4,6 +4,22 @@ export type RegexMatchedString<Pattern extends RegExp> = string & {
   __regexPattern: Pattern;
 };
 
+
+/**
+ * Converts the given string from camel-case to kebab-case.
+ * @template T The string to convert the case.
+ * @see https://gist.github.com/albertms10/09f14ef7ebdc3ce0e95683c728616253
+ * @example
+ * type Kebab = CamelToKebab<'exampleVarName'>;
+ * // 'example-var-name'
+ */
+export type CamelToKebab<S extends string> = S extends `${infer T}${infer U}`
+  ? U extends Uncapitalize<U>
+    ? `${Uncapitalize<T>}${CamelToKebab<U>}`
+    : `${Uncapitalize<T>}-${CamelToKebab<U>}`
+  : '';
+
+
 type Only<T, U> = {
   [P in keyof T]: T[P];
 } & {

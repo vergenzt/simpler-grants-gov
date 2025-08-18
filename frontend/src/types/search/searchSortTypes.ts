@@ -1,17 +1,16 @@
-export type SortOptions =
-  | "relevancy"
-  | "postedDateDesc"
-  | "postedDateAsc"
-  | "closeDateDesc"
-  | "closeDateAsc"
-  | "opportunityTitleAsc"
-  | "opportunityTitleDesc"
-  | "awardFloorAsc"
-  | "awardFloorDesc"
-  | "awardCeilingAsc"
-  | "awardCeilingDesc";
+// translations under sortBy.options.$value
+export const SORT_OPTIONS = [
+  "relevancy",
+  "postedDateDesc",
+  "postedDateAsc",
+  "closeDateDesc",
+  "closeDateAsc",
+  "opportunityTitleAsc",
+  "opportunityTitleDesc",
+  "awardFloorAsc",
+  "awardFloorDesc",
+  "awardCeilingAsc",
+  "awardCeilingDesc",
+] as const;
 
-export type SortOption = {
-  label: string;
-  value: SortOptions;
-};
+export type SortOption = typeof SORT_OPTIONS[number];

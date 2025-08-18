@@ -217,7 +217,6 @@ export const messages = {
       forecastedProjectStartDate: "Estimated Project Start Date",
       forecastedLastUpdated: "Last Updated Date",
       fiscalYear: "Fiscal Year",
-
       version: "Version",
     },
     link: {
@@ -636,10 +635,254 @@ export const messages = {
       },
       options: {
         status: {
-          forecasted: "Forecasted",
-          posted: "Open",
-          closed: "Closed",
-          archived: "Archived",
+          forecasted: {
+            label: "Forecasted",
+            tooltip: null,
+          },
+          posted: {
+            label: "Open",
+            tooltip: null,
+          },
+          closed: {
+            label: "Closed",
+            tooltip: null,
+          },
+          archived: {
+            label: "Archived",
+            tooltip: null,
+          },
+        },
+        eligibility: {
+          state_governments: {
+            label: "State governments",
+            tooltip: null,
+          },
+          county_governments: {
+            label: "County governments",
+            tooltip: null,
+          },
+          city_or_township_governments: {
+            label: "City or township governments",
+            tooltip: null,
+          },
+          special_district_governments: {
+            label: "Special district governments",
+            tooltip: null,
+          },
+          independent_school_districts: {
+            label: "Independent school districts",
+            tooltip: null,
+          },
+          public_and_state_institutions_of_higher_education: {
+            label: "Public and state institutions of higher education",
+            tooltip: null,
+          },
+          private_institutions_of_higher_education: {
+            label: "Private institutions of higher education",
+            tooltip: null,
+          },
+          federally_recognized_native_american_tribal_governments: {
+            label: "Federally recognized Native American tribal governments",
+            tooltip: null,
+          },
+          other_native_american_tribal_organizations: {
+            label: "Other Native American tribal organizations",
+            tooltip: null,
+          },
+          public_and_indian_housing_authorities: {
+            label: "Public and Indian housing authorities",
+            tooltip: null,
+          },
+          nonprofits_non_higher_education_with_501c3: {
+            label: "Nonprofits non-higher education with 501(c)(3)",
+            tooltip: null,
+          },
+          nonprofits_non_higher_education_without_501c3: {
+            label: "Nonprofits non-higher education without 501(c)(3)",
+            tooltip: null,
+          },
+          individuals: {
+            label: "Individuals",
+            tooltip: null,
+          },
+          for_profit_organizations_other_than_small_businesses: {
+            label: "For-profit organizations other than small businesses",
+            tooltip: null,
+          },
+          small_businesses: {
+            label: "Small businesses",
+            tooltip: null,
+          },
+          other: {
+            label: "Other",
+            tooltip: null,
+          },
+          unrestricted: {
+            label: "Unrestricted",
+            tooltip: null,
+          },
+        },
+        fundingInstrument: {
+          cooperative_agreement: {
+            label: "Cooperative Agreement",
+            tooltip: "Involves active agency participation in a project, while grants provide funds and oversight without direct involvement.",
+          },
+          grant: {
+            label: "Grant",
+            tooltip: null,
+          },
+          procurement_contract: {
+            label: "Procurement Contract ",
+            tooltip: "Allows the government to purchase goods and services for its benefit, while grants provide financial support to advance a public purpose.",
+          },
+          other: {
+            label: "Other",
+            tooltip: null,
+          },
+        },
+        category: {
+          "recovery_act": {
+            label: "Recovery Act",
+            tooltip: null,
+          },
+          "agriculture": {
+            label: "Agriculture",
+            tooltip: null,
+          },
+          "arts": {
+            label: "Arts",
+            tooltip: null,
+          },
+          "business_and_commerce": {
+            label: "Business and Commerce",
+            tooltip: null,
+          },
+          "community_development": {
+            label: "Community Development",
+            tooltip: null,
+          },
+          "consumer_protection": {
+            label: "Consumer Protection",
+            tooltip: null,
+          },
+          "disaster_prevention_and_relief": {
+            label: "Disaster Prevention and Relief",
+            tooltip: null,
+          },
+          "education": {
+            label: "Education",
+            tooltip: null,
+          },
+          "employment_labor_and_training": {
+            label: "Employment, Labor, and Training",
+            tooltip: null,
+          },
+          "energy": {
+            label: "Energy",
+            tooltip: null,
+          },
+          "environment": {
+            label: "Environment",
+            tooltip: null,
+          },
+          "food_and_nutrition": {
+            label: "Food and Nutrition",
+            tooltip: null,
+          },
+          "health": {
+            label: "Health",
+            tooltip: null,
+          },
+          "housing": {
+            label: "Housing",
+            tooltip: null,
+          },
+          "humanities": {
+            label: "Humanities",
+            tooltip: null,
+          },
+          "information_and_statistics": {
+            label: "Information and Statistics",
+            tooltip: null,
+          },
+          "infrastructure_investment_and_jobs_act": {
+            label: "Infrastructure Investment and Jobs Act",
+            tooltip: null,
+          },
+          "income_security_and_social_services": {
+            label: "Income Security and Social Services",
+            tooltip: null,
+          },
+          "law_justice_and_legal_services": {
+            label: "Law, Justice, and Legal Services",
+            tooltip: null,
+          },
+          "natural_resources": {
+            label: "Natural Resources",
+            tooltip: null,
+          },
+          "opportunity_zone_benefits": {
+            label: "Opportunity Zone Benefits",
+            tooltip: null,
+          },
+          "regional_development": {
+            label: "Regional Development",
+            tooltip: null,
+          },
+          "science_technology_and_other_research_and_development": {
+            label: "Science, Technology, and Other Research and Development",
+            tooltip: null,
+          },
+          "transportation": {
+            label: "Transportation",
+            tooltip: null,
+          },
+          "affordable_care_act": {
+            label: "Affordable Care Act",
+            tooltip: null,
+          },
+          "other": {
+            label: "Other",
+            tooltip: null,
+          },
+        },
+        closeDate: {
+          "7": {
+            label: "Next 7 days",
+            tooltip: null,
+          },
+          "30": {
+            label: "Next 30 days",
+            tooltip: null,
+          },
+          "90": {
+            label: "Next 90 days",
+            tooltip: null,
+          },
+          "120": {
+            label: "Next 120 days",
+            tooltip: null,
+          },
+        },
+        costSharing: {
+          "true": {
+            label: "Yes",
+            tooltip: null,
+          },
+          "false": {
+            label: "No",
+            tooltip: null,
+          },
+        },
+        andOr: {
+          "AND": {
+            label: "Must include all words (ex. transportation AND safety)",
+            tooltip: null,
+          },
+          "OR": {
+            label: "May include any words (ex. transportation OR safety)",
+            tooltip: null,
+          },
         },
       },
     },
