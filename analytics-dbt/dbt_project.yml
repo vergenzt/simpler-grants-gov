@@ -1,0 +1,16 @@
+name: simpler_grants_vulns
+version: '0.0.1'
+
+flags:
+  send_anonymous_usage_stats: false
+
+profile: simpler_grants_vulns
+
+models:
+  simpler_grants_vulns:
+    +materialized: table
+
+vars:
+  gh_url: 'https://api.github.com'
+  gh_repo: 'HHS/simpler-grants-gov'
+  grype_data_path: 'data/grype/*.json'

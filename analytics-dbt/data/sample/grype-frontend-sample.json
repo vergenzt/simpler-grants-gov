@@ -1,0 +1,80 @@
+{
+  "run_id": 99000001,
+  "app_name": "frontend",
+  "started_at": "2026-02-28T10:00:00Z",
+  "scan": {
+    "descriptor": {
+      "name": "grype",
+      "version": "0.90.0",
+      "db": {"built": "2026-02-28T01:04:00Z", "schemaVersion": 5}
+    },
+    "source": {
+      "type": "image",
+      "target": {
+        "userInput": "ghcr.io/hhs/simpler-grants-gov/frontend:sample",
+        "imageID": "sha256:aaabbbccc",
+        "manifestDigest": "sha256:dddeeefff",
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "matches": [
+      {
+        "vulnerability": {
+          "id": "CVE-2025-29927",
+          "severity": "High",
+          "namespace": "nvd:cpe",
+          "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-29927",
+          "fix": {"state": "fixed", "versions": ["15.2.4"]}
+        },
+        "artifact": {
+          "name": "next",
+          "version": "15.2.3",
+          "type": "npm",
+          "purl": "pkg:npm/next@15.2.3",
+          "locations": [{"path": "/app/node_modules/next/package.json"}]
+        },
+        "matchDetails": [{"type": "exact-indirect-match", "matcher": "javascript-matcher"}],
+        "relatedVulnerabilities": [
+          {"id": "GHSA-f82f-qrg4-9pg3", "severity": "High", "namespace": "github:language:javascript"}
+        ]
+      },
+      {
+        "vulnerability": {
+          "id": "CVE-2025-21590",
+          "severity": "Medium",
+          "namespace": "nvd:cpe",
+          "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-21590",
+          "fix": {"state": "not-fixed", "versions": []}
+        },
+        "artifact": {
+          "name": "libc6",
+          "version": "2.36-9+deb12u9",
+          "type": "deb",
+          "purl": "pkg:deb/debian/libc6@2.36-9+deb12u9",
+          "locations": [{"path": "/var/lib/dpkg/info/libc6.list"}]
+        },
+        "matchDetails": [{"type": "exact-direct-match", "matcher": "dpkg-matcher"}],
+        "relatedVulnerabilities": []
+      },
+      {
+        "vulnerability": {
+          "id": "CVE-2024-56337",
+          "severity": "High",
+          "namespace": "nvd:cpe",
+          "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-56337",
+          "fix": {"state": "fixed", "versions": ["11.0.0-M2"]}
+        },
+        "artifact": {
+          "name": "org.apache.tomcat:tomcat-catalina",
+          "version": "11.0.0-M1",
+          "type": "java-archive",
+          "purl": "pkg:maven/org.apache.tomcat/tomcat-catalina@11.0.0-M1",
+          "locations": [{"path": "/opt/tomcat/lib/catalina.jar"}]
+        },
+        "matchDetails": [{"type": "exact-direct-match", "matcher": "java-matcher"}],
+        "relatedVulnerabilities": []
+      }
+    ]
+  }
+}

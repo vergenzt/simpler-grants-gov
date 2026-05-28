@@ -1,0 +1,9 @@
+target/
+dbt_packages/
+logs/
+dbt_internal_packages/
+data/
+!data/
+!data/.gitignore
+!data/sample/
+!data/sample/**
